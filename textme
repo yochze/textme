@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+OUTPUT=$($@)
+ruby lib/textme.rb "$OUTPUT"
+echo "Also sent a text to your phone!"
+
+
+#catecho () {
+    #if read -t 0; then
+       #echo "$@" 
+    #else
+        #echo "$*"
+    #fi
+#}
