@@ -1,13 +1,6 @@
 #!/usr/bin/env sh
 OUTPUT=$($@)
-ruby lib/textme.rb "$OUTPUT"
+#SEND_LAST_ROW='%s' "$OUTPUT" | sed -n -e '${x;1!p;};h'  
+#echo OUTPUT
+ruby /Users/yochze/Desktop/textme/lib/textme.rb "$OUTPUT"
 echo "Also sent a text to your phone!"
-
-
-#catecho () {
-    #if read -t 0; then
-       #echo "$@" 
-    #else
-        #echo "$*"
-    #fi
-#}

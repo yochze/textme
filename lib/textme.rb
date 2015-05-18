@@ -23,9 +23,9 @@ end
 @client = Twilio::REST::Client.new
 
 msg = ARGV.join("\s").gsub("\n", "\s")
-puts msg
+puts "OUTPUT: " + msg
 @client.messages.create(
     from: '+18665562571',
     to: '+972506660186',
-    body: 'Task completed: ' + msg
+    body: "Task completed\n" + "OUTPUT: " + msg
 )
