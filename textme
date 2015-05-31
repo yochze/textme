@@ -1,6 +1,7 @@
-#!/usr/bin/env sh
-OUTPUT="$($@)"
-#SEND_LAST_ROW='%s' "$OUTPUT" | sed -n -e '${x;1!p;};h'  
-#echo OUTPUT
-ruby lib/textme.rb "$OUTPUT"
+#!/usr/bin/env bash
+if [[ "$1" == -m ]]; then
+	ruby lib/textme.rb "${@:2}"
+else
+	{ read a; [ "$a" ] && ruby lib/textme.rb "$a"; }
+fi
 echo "Also sent a text to your phone!"
