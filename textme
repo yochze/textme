@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
-if [[ "$1" == -m ]]; then
-	ruby lib/textme.rb "${@:2}"
+#!/usr/bin/env ruby
+if ARGV[0] == "-m"
+	%x(ruby lib/textme.rb #{ARGV[1..-1]})
 else
-	{ read a; [ "$a" ] && ruby lib/textme.rb "$a"; }
-fi
-echo "Also sent a text to your phone!"
+	%x(ruby lib/textme.rb #{ARGF.read})
+end
+puts "Also sent a text to your phone!"
